@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>CRUD com Bootstrap</title>
+    <title>Cadastro de Funcionários</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,6 @@
             padding-bottom: 20px;
         }
     </style>
-    <link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 </head>
 <body>
@@ -38,7 +37,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo BASEURL; ?>funcionarios">Gerenciar Funcionários</a></li>
-                    <li><a href="<?php echo BASEURL; ?>funcionarios/add.php">Novo Funcionário</a></li>
+                    <li><a href="<?php echo BASEURL; ?>funcionarios/novo.php">Novo Funcionário</a></li>
                 </ul>
             </li>
           </ul>
