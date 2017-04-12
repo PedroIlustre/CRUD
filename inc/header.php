@@ -27,9 +27,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="<?php echo BASEURL; ?>index.php" class="navbar-brand">CRUD</a>
+          <a href="<?php echo BASEURL; ?>index.php" class="navbar-brand">CONTROLE DE FUNCIONÁRIOS E RESERVA DE SALAS</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <!--<div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">          
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
