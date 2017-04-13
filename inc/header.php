@@ -27,8 +27,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="<?php echo BASEURL; ?>index.php" class="navbar-brand">CONTROLE DE FUNCIONÁRIOS E RESERVA DE SALAS</a>
+          <a href="<?=BASEURL?>index.php" class="navbar-brand">CONTROLE DE FUNCIONÁRIOS E RESERVA DE SALAS</a>
         </div>
+        <div class="navbar">
+            <br> <a href="<?= BASEURL?>" onclick="<?php session_destroy();?>" class="fa fa-power-off" style="color: #FFF !important;float:right; font-size:20px" > Sair </a>
+        </div>
+          <?php 
+            session_start();
+            if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true)) {
+               unset($_SESSION['usuario']);
+               unset($_SESSION['senha']);
+               header('location:index.php');
+            }
+
+            $logado = $_SESSION['usuario'];?>
         <!--<div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">          
             <li class="dropdown">

@@ -3,28 +3,25 @@
 require_once('../config.php');
 require_once(DBAPI);
 
-$funcionarios = null;
+$salas = null;
 
-# O funcionário a ser editado
-$funcionario = null;
+# Sala a ser editado
+$sala = null;
 
-# Listagem de Funcionários
+# Listagem de Salas
 function index() {
-	global $funcionarios;
+	global $salas;
         
-        # Grupo de funcionários para listagem
-	$funcionarios = find_all('funcionarios');
+        # Grupo de Salas para listagem
+	$salas = find_all('salas');
 }
 
 # Cria funcionários
 function novo() {
-  if (!empty($_POST['funcionario'])) {
+  if (!empty($_POST['sala'])) {
+    $sala = $_POST['sala'];
     
-    $today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
-    $funcionario = $_POST['funcionario'];
-    $funcionario['data_edicao'] = $funcionario['data_criacao'] = $today->format("Y-m-d H:i:s");
-    
-    save_new('funcionarios', $funcionario);
+    save_new('salas', $sala);
     header('location: index.php');
   }
 }
@@ -34,14 +31,13 @@ function editar() {
     $now = date_create('now', new DateTimeZone('America/Sao_Paulo'));
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        if (isset($_POST['funcionario'])) {
-            $funcionario = $_POST['funcionario'];
-            $funcionario['data_edicao'] = $now->format("Y-m-d H:i:s");
-            save_edit('funcionarios', $id, $funcionario);
+        if (isset($_POST['sala'])) {
+            $sala = $_POST['sala'];
+            save_edit('salas', $id, $sala);
             header('location: index.php');
         } else {
-            global $funcionario;
-            $funcionario = find('funcionarios', $id);
+            global $sala;
+            $sala = find('salas', $id);
         } 
     } else {
         header('location: index.php');
@@ -49,7 +45,7 @@ function editar() {
 }
 
 function delete($id = null) {
-    global $funcionario;
-    $funcionario = remove('funcionarios', $id);
+    global $sala;
+    $sala = remove('salas', $id);
     header('location: index.php');
 }

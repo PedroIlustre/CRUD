@@ -56,7 +56,7 @@ function find_all( $table ) {
   return find($table);
 }
 
-# Insere novos funcionários
+# Insere novos registros
 function save_new($table = null, $data = null) {
     $database = open_database();
     $columns = null;
@@ -89,11 +89,11 @@ function save_new($table = null, $data = null) {
     close_database($database);
 }
 
-# Edita registros de funcionários cadastrados
+# Edita registros de registros cadastrados
 function save_edit($table = null, $id = 0, $data = null) {
     $database = open_database();
     $items = null;
-    
+
     foreach ($data as $key => $value) {
         if($key == "'senha'"){
             $items .= trim($key, "'") . "='".base64_encode($value)."',";
@@ -105,7 +105,7 @@ function save_edit($table = null, $id = 0, $data = null) {
     $items = rtrim($items, ',');
     $sql  = "UPDATE " . $table;
     $sql .= " SET $items";
-    $sql .= " WHERE id=" . $id . ";";
+    $sql .= " WHERE id=" . $id . ";";    
     try {
         $database->query($sql);
         $_SESSION['message'] = 'Registro atualizado com sucesso.';
@@ -117,7 +117,7 @@ function save_edit($table = null, $id = 0, $data = null) {
     close_database($database);
 }
 
-# Delete Funcionários
+# Delete registros
 function remove( $table = null, $id = null ) {
   $database = open_database();
 	

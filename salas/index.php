@@ -7,11 +7,11 @@ include(HEADER_TEMPLATE); ?>
 <header>
 	<div class="row">
             <div class="col-sm-6">
-                <h2>Funcionários</h2>
+                <h2>Salas</h2>
             </div>
             <div class="col-sm-6 text-right h2">
-                <a class="btn btn-primary" href="novo.php"><i class="fa fa-plus"></i> Novo Funcionário</a>
-                <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>
+                <a class="btn btn-primary" href="novo.php"><i class="fa fa-plus"></i> Nova Sala</a>
+                <a class="btn btn-default" href="../logado.php"><i class="fa fa-reply"></i> Voltar</a>
             </div>
 	</div>
 </header>
@@ -31,22 +31,18 @@ include(HEADER_TEMPLATE); ?>
 	<tr>
             <th>ID</th>
             <th width="30%">Nome</th>
-            <th width="30%">Nome de Acesso</th>
-            <th width="10%">Senha</th>
             <th width="30%">Opções</th>
 	</tr>
 </thead>
 <tbody>
-<?php if ($funcionarios) { 
-        foreach ($funcionarios as $funcionario) { ?>
+<?php if ($salas) { 
+        foreach ($salas as $sala) { ?>
 	<tr>
-                    <td><?php echo $funcionario['id']; ?></td>
-                    <td><?php echo $funcionario['nome']; ?></td>
-                    <td><?php echo $funcionario['nome_usuario']; ?></td>
-                    <td><?php echo $funcionario['senha']; ?></td>
+                    <td><?php echo $sala['id']; ?></td>
+                    <td><?php echo $sala['nome']; ?></td>
                     <td class="actions text-left">
-                            <a href="editar.php?id=<?php echo $funcionario['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
-                            <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-funcionario="<?php echo $funcionario['id']; ?>">
+                            <a href="editar.php?id=<?php echo $sala['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
+                            <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-funcionario="<?php echo $sala['id']; ?>">
                                     <i class="fa fa-trash"></i> Excluir
                             </a>
                     </td>

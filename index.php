@@ -1,8 +1,13 @@
 <?php
+
 require_once 'config.php'; 
 require_once DBAPI;
+include(HEADER_TEMPLATE_INDEX);  
 
-include(HEADER_TEMPLATE);  ?>
+if(isset($_GET['msg']) && $_GET['msg'] == 0){
+    echo 'Usuário Invalido';
+}
+?>
 
 <br> <br>
 <form method="post" action="valida.php">

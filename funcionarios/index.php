@@ -11,7 +11,7 @@ include(HEADER_TEMPLATE); ?>
             </div>
             <div class="col-sm-6 text-right h2">
                 <a class="btn btn-primary" href="novo.php"><i class="fa fa-plus"></i> Novo Funcionário</a>
-                <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>
+                <a class="btn btn-default" href="../logado.php"><i class="fa fa-reply"></i> Voltar</a>
             </div>
 	</div>
 </header>
