@@ -6,28 +6,39 @@
 <?php include(HEADER_TEMPLATE); ?>
 
 <h2>Novo Funcionário</h2>
-
-<form action="novo.php" method="post">
+<script>
+    $(document).ready(function(){
+        $('.phone').mask('0000-0000');
+    });
+    </script>
+<form id="adiciona_funcionario" action="novo.php" method="post" data-toggle="validator">
   <!-- area de campos do form -->
   <hr />
     <div class="row">
+        
+<div class="form-group" data-toggle="validator">
+<label for="exampleInputEmail1">Email address</label>
+<input type="email" class="form-control" id="exampleInputEmail" placeholder="Email" data-error="Por favor, informe um e-mail correto." required>
+<div class="help-block with-errors">asdasd</div>
+</div>
+
         <div class="form-group col-md-7">
             <label for="name">Nome / Razão Social</label>
-            <input type="text" class="form-control" name="funcionario['nome']">
+            <input type="text" class="form-control" maxlength="100" name="funcionario['nome']" required>
         </div>
         <div class="form-group col-md-2">
             <label for="campo2">Telefone</label>
-            <input type="text" class="form-control" name="customer['phone']">
+            <input type="text" class="phone" name="customer['phone']">
         </div>
         <div class="form-group col-md-7">
             <label for="name">Nome de Acesso</label>
-            <input type="text" class="form-control" name="funcionario['nome_usuario']">
+            <input type="text" class="form-control" size='10' name="funcionario['nome_usuario']" required>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-2">
             <label for="name">Senha</label>
-            <input type="text" class="form-control" name="funcionario['senha']">
+            <input type="password" class="form-control" name="funcionario['senha']" required>
         </div>
     </div>
     <div class="row">

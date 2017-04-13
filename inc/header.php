@@ -6,7 +6,8 @@
     <title>Cadastro de Funcionários</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="<?php echo BASEURL; ?>js/jquery-3.2.1.min.js"></script>
+    <script src="<?php echo BASEURL; ?>js/jquery.maskedinput.js"></script>
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.min.css">
     <style>
         body {
@@ -14,6 +15,8 @@
             padding-bottom: 20px;
         }
     </style>
+    
+        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 </head>
 <body>
